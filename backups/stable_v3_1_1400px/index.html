@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Rhythm Danmaku</title>
+    <link rel="stylesheet" href="style.css?v=3.0">
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="ui-layer">
+            <div id="start-screen" class="screen">
+                <h1 class="glitch" data-text="Rhythm Danmaku">Rhythm Danmaku</h1>
+                <p class="blink">Press SPACE to Enter</p>
+                <p class="version">System v2.9</p>
+            </div>
+
+            <div id="select-screen" class="screen hidden">
+                <h2>SELECT TRACK</h2>
+                <div class="track-list">
+                    <div id="btn-stage1" class="track-item selected" data-id="1">
+                        <span class="track-num">1-1</span>
+                        <span class="track-name">First Steps</span>
+                        <span class="track-bpm">BPM 140</span>
+                    </div>
+                    <div id="btn-stage2" class="track-item" data-id="2">
+                        <span class="track-num">1-2</span>
+                        <span class="track-name">Velocity</span>
+                        <span class="track-bpm">BPM 180</span>
+                    </div>
+                </div>
+                <p class="controls">UP/DOWN: Select | SPACE: Play</p>
+            </div>
+
+            <!-- Game Over / Victory are drawn on Canvas in Ver 3.0, but keeping these hidden divs is fine/safe for now -->
+            <div id="game-over-screen" class="hidden">
+                <h1>GAME OVER</h1>
+                <p>Press R to Retry</p>
+            </div>
+            <div id="victory-screen" class="hidden">
+                <h1>VICTORY!</h1>
+                <p>Press R to Play Again</p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="src/main.js?v=2.9"></script>
+</body>
+
+</html>

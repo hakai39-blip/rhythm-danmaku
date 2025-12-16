@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #111;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    user-select: none;
+}
+
+#game-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ui-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ui-layer>* {
+    pointer-events: auto;
+}
+
+canvas {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    /* Ensure canvas is block so no weird spacing */
+    display: block;
+}
+
+.screen {
+    text-align: center;
+    background: rgba(17, 17, 17, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: auto;
+    /* Enable clicks for buttons */
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #0ff;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ff3366;
+    text-shadow: 0 0 10px #ff3366;
+    border-bottom: 2px solid #ff3366;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.controls {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-top: 50px;
+}
+
+.version {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+/* Select Screen Styles */
+.track-list {
+    display: flex;
+    flex-direction: column !important;
+    /* Force Vertical */
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.track-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 30px;
+    width: 600px;
+    /* Increased width to prevent overlap */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.track-item.selected {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: #00ffff;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.track-num {
+    font-weight: bold;
+    color: #00ffff;
+}
+
+.track-name {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.track-bpm {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Animations */
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.glitch {
+    position: relative;
+    color: white;
+}
